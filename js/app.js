@@ -1,4 +1,4 @@
-//PLAN - Whack a "mole"
+//PLAN - Whack a "mole" -Whack-a-ball / whack a Raider!
 //Basic game: 10sec, start/reset buttons, display, counter, scoreboard
 //Additional 1: faster level(s)
 //Additional 2: two player mode player 1 first switch to player 2, compare --> winner
@@ -15,12 +15,22 @@
 //Start basic mechanics to work on 2x2 grid then expand
 
 //Step 1:
-//HTML 2x2 grid first
+//HTML 2x2 grid first - 4 lis
+//Minimal CSS styling to see layout - float left
 
-//Start --> add click event to
+//Start --> add click event to each li
 //Trigger COUNTER &
 //Trigger RANDOM display of 'moles'(squares) - "random li pick" for interval -->TIMEOUT
+// let counter = 1;
 
+$(() => {
+  const $lis = $('li');
+  console.log($lis);
+  // for (var i = 0; i < $lis.length; i++) {
+  $lis.on('click', () => {
+    console.log('clicked');
+  });
+});
 //Step 2:
 //Click events attached to each random display mole - visual (and audio later)
 
@@ -44,4 +54,5 @@
 
 
 //STYLING - visual & audio
+//Grey / White / Red / Black only --> find a standard color mix palette for all work
 //Sports based - softball

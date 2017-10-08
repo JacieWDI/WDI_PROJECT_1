@@ -1,3 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: blue;
+}
+
+header {
+  height: 100px;
+  background-color: white;
+  text-align: center;
+  font-size: 80px;
+}
+
+ul {
+  margin: 10px auto;
+  width: 400px;
+  height: 400px;
+  background: red;
+}
+
+li {
+  width: 196px;
+  margin: 2px;
+  height: 196px;
+  line-height: 196px;
+  background: white;
+  color: black;
+  text-align: center;
+  float: left;
+  font-size: 150px;
+}
+
+
+
+footer {
+  height: 100px;
+  background-color: green;
+  clear:both;
 }
