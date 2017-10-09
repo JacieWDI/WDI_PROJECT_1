@@ -32,9 +32,11 @@ let $li = null;
 // let $interval = null;
 // let $timeContainer = null;
 
-let interval;
-let timer = 20;
-startGame();
+let interval = null;
+let counter = 0;
+let startSomething;
+
+
 
 // let $score = null;
 // let $timer = null;
@@ -46,11 +48,12 @@ startGame();
 // Return a random number from 0 to array of li length
 function setup() {
   $li = $('li');
-  pickRandomLi();
+  startGame();
 
 }
 
 function pickRandomLi() {
+  // console.log($li);
   const li = $li[Math.floor(Math.random()*$li.length)];
   console.log(li);
   showMole(li);
@@ -88,34 +91,24 @@ function killMole() {
 
 function startGame() {
   pickRandomLi();
-  setInterval();
+  startSomething = setInterval(callFunction, 2000);
 }
 
-// function countdown() {
-//   timer--;
-//   $timeContainer.html(timer);
-//
-//   if (timer <= 0) {
-//     clearInterval(interval);
-//   }
-// }
-
-
 //INTERVAL LOOP - recall later for speed
-let counter = 0;
+// let counter = 0;
 
-//set interval to be 500 between random li function
+//set interval to be 1000 between random li function
 
-timer = setInterval(() => {
+function callFunction() {
   counter ++;
   console.log(counter);
   checkValue();
-}, 500);
+}
 
-//Sets interval to
+//Number of times to run interval before clearing
 function checkValue() {
   if ( counter >= 3 ) {
-    clearInterval(timer);
+    clearInterval(startSomething);
   }
 }
 
