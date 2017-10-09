@@ -24,15 +24,22 @@
 // let counter = 1;
 //$randomLi = $('.li');
 
-
-
 $(setup);
 
 //Initalise DOM
 //SET GLOBAL VARIABLES
 let $li = null;
 // let $interval = null;
+// let $timeContainer = null;
+
+let interval;
+let timer = 20;
+startGame();
+
+// let $score = null;
 // let $timer = null;
+
+
 
 // console.log($li);
 // STEP 1: Return a random li
@@ -40,6 +47,7 @@ let $li = null;
 function setup() {
   $li = $('li');
   pickRandomLi();
+
 }
 
 function pickRandomLi() {
@@ -51,6 +59,8 @@ function pickRandomLi() {
 //STEP 2:
 //To each random li selected --> display a mole - color first - visual (and audio later) - complete by adding a class
 //Add a click to the selected "mole"
+//Remove mole class after 1500
+//One click to ensure events do not accumulate
 
 function showMole(li) {
   const mole = $(li).addClass('mole');
@@ -59,42 +69,73 @@ function showMole(li) {
   setTimeout(function() {
     $(li).removeClass('mole');
     $(li).off('click');
-  }, 2500);
+  }, 1500);
 }
 
 //STEP 3:
-//Remove mole if clicked and generally after 1000
+//Remove mole (and therefore class) if clicked
 function killMole() {
   $(this).removeClass('mole');
+}
+
+//STEP 4:
+//Restart from STEP 1 - i.e. setInterval for certain number of loops
+//Add click event to start button at DOM initilisation
+
+//add interval to start game,
+//then add increment
 
 
-  // $li.on('click', () => {
-  // //console.log('clicked');
-  // if (true) {
-  //   const hit = $(mole).removeClass('mole');
-  //   killMole(hit);
-  //   console.log(hit);
-  // }else {
-  // }
-  // });
-  //timeOut();
+function startGame() {
+  pickRandomLi();
+  setInterval();
+}
+
+// function countdown() {
+//   timer--;
+//   $timeContainer.html(timer);
+//
+//   if (timer <= 0) {
+//     clearInterval(interval);
+//   }
+// }
+
+
+//INTERVAL LOOP - recall later for speed
+let counter = 0;
+
+//set interval to be 500 between random li function
+
+timer = setInterval(() => {
+  counter ++;
+  console.log(counter);
+  checkValue();
+}, 500);
+
+//Sets interval to
+function checkValue() {
+  if ( counter >= 3 ) {
+    clearInterval(timer);
+  }
 }
 
 
 
 
-//STEP 4:
-//Loop
-//Add click event to start button at DOM initilisation
 
+
+
+
+// function incrementScore() {
+// }
+
+//
 //If above work then add in click event for HIT and hide plus increment score
+//function countdown
+//function gameover
+//function reset
+//
 
-//STEP 5:
-//If Else condition/statement for HIT --> knockout / to hide visually and increment score or
-//else NOT HIT --> disappear ()
-//__________________________________________
-//EXPANSION OF BOARD
-//___________________________________________
 
 //ADDITIONAL 1/2
 //Faster levels - change counter and loop counter
