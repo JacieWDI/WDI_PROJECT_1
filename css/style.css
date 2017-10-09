@@ -3,21 +3,27 @@
 }
 
 body {
-  background: blue;
+  background: #F2F1F1;
 }
 
 header {
   height: 100px;
   background-color: white;
   text-align: center;
+  color: #332D2D;
   font-size: 80px;
+  border-color: #695D5D;
+  border-width: medium;
 }
 
+h2 {
+  color: #E90505;
+}
 ul {
   margin: 10px auto;
   width: 600px;
   height: 600px;
-  background: red;
+  background: #787171;
 }
 
 li {
@@ -25,20 +31,26 @@ li {
   margin: 2px;
   height: 196px;
   line-height: 196px;
-  background: white;
-  color: black;
+  background: #F2F1F1;
+  color: #695D5D;
   text-align: center;
   float: left;
   font-size: 150px;
 }
 
 .mole {
-  background-color: grey;
+  background-color: #E90505;
 }
 
+button {
+  margin: 0 auto;
+  color: #E90505;
+  background-color: #F2F1F1;
+}
 
 footer {
-  height: 100px;
-  background-color: green;
-  clear:both;
+  height: 50px;
+  background-color: #695D5D;
+  clear: both;
+
 }
