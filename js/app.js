@@ -34,23 +34,23 @@ $(setup);
   // Return a random number from 0 to array of li length
 
   function setup() {
+    $randomLi();
     pickRandomLi();
   }
 
   function pickRandomLi() {
     // for (var i = 0; i < $lis.length; i++) {
-      const $randomLi = `${Math.floor(Math.random()*10)*($lis.length-0)+0}`;
+      const $randomLi = [Math.floor(Math.random()*10)*($lis.length)];
       return $randomLi.html();
     }
-  }
-  pickRandomLi();
   // return $lis.html[i];
   console.log(pickRandomLi);
 });
 
 
 //Step 2:
-//Click events attached to each random display mole - visual (and audio later)
+//To each random li --> display a mole - visual (and audio later)
+//Add a click
 
 //   const $lis = $('li');
 //   console.log($lis);
@@ -60,7 +60,7 @@ $(setup);
 // });
 
 //Step 3:
-//Remove class and click after 1000
+//Remove mole if clicked and generally after 1000
 
 //Step 4:
 //Loop
