@@ -45,6 +45,7 @@ function setup() {
 function pickRandomLi() {
   const li = $li[Math.floor(Math.random()*$li.length)];
   console.log(li);
+  showMole(li);
 }
 
 //STEP 2:
@@ -52,12 +53,12 @@ function pickRandomLi() {
 //Add a click to the selected "mole"
 
 
-function showMole() {
-  const mole = $li.addClass('active');
+function showMole(li) {
+  const mole = $(li).addClass('mole');
   console.log(mole);
 }
 
-showMole();
+
 
 //   $li.on('click', () => {
 //     console.log('clicked');
