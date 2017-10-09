@@ -1,7 +1,7 @@
 //PLAN - Whack a "mole" -Whack-a-ball / whack a Raider!
 //Basic game: 10sec, start/reset buttons, display, counter, scoreboard
 //Additional 1: faster level(s)
-//Additional 2: two player mode player 1 first switch to player 2, compare --> winner
+//Additional 2: multiple moles appearing
 
 //Sunday - review class notes/homeworks for logic required for basic game of 2x2, ideally get the basic working by afternoon Monday
 //Monday eve - expand
@@ -28,47 +28,58 @@
 
 $(setup);
 
-  $lis = $('.li');
-  // console.log($lis);
-  // Return a random li and "appear"
-  // Return a random number from 0 to array of li length
+//Initalise DOM
+//SET GLOBAL VARIABLES
+let $li = null;
+// let $interval = null;
+// let $timer = null;
 
-  function setup() {
-    $randomLi();
-    pickRandomLi();
-  }
+// console.log($li);
+// STEP 1: Return a random li
+// Return a random number from 0 to array of li length
+function setup() {
+  $li = $('li');
+  pickRandomLi();
+}
 
-  function pickRandomLi() {
-    // for (var i = 0; i < $lis.length; i++) {
-      const $randomLi = [Math.floor(Math.random()*10)*($lis.length)];
-      return $randomLi.html();
-    }
-  // return $lis.html[i];
-  console.log(pickRandomLi);
-});
+function pickRandomLi() {
+  const li = $li[Math.floor(Math.random()*$li.length)];
+  console.log(li);
+}
+
+//STEP 2:
+//To each random li selected --> display a mole - color first - visual (and audio later) - complete by adding a class
+//Add a click to the selected "mole"
 
 
-//Step 2:
-//To each random li --> display a mole - visual (and audio later)
-//Add a click
+function showMole() {
+  const mole = $li.addClass('active');
+  console.log(mole);
+}
 
-//   const $lis = $('li');
-//   console.log($lis);
-//   $lis.on('click', () => {
+showMole();
+
+//   $li.on('click', () => {
 //     console.log('clicked');
 //   });
 // });
 
-//Step 3:
+
+
+
+
+
+
+//STEP 3:
 //Remove mole if clicked and generally after 1000
 
-//Step 4:
+//STEP 4:
 //Loop
 //Add click event to start button at DOM initilisation
 
 //If above work then add in click event for HIT and hide plus increment score
 
-//Step 5:
+//STEP 5:
 //If Else condition/statement for HIT --> knockout / to hide visually and increment score or
 //else NOT HIT --> disappear ()
 //__________________________________________
@@ -77,6 +88,7 @@ $(setup);
 
 //ADDITIONAL 1/2
 //Faster levels - change counter and loop counter
+//Multiple random moles appearing
 
 
 //STYLING - visual & audio
