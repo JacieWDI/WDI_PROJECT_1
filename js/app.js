@@ -54,33 +54,33 @@ function pickRandomLi() {
 
 function showMole(li) {
   const mole = $(li).addClass('mole');
-  console.log(mole);
+  $(li).one('click', killMole);
 
-  killMole(mole);
+  setTimeout(function() {
+    $(li).removeClass('mole');
+    $(li).off('click');
+  }, 2500);
 }
 
 //STEP 3:
 //Remove mole if clicked and generally after 1000
-function killMole(mole) {
-  $li.on('click', () => {
-    //console.log('clicked'
-  if (true) {
-    const hit = $(mole).removeClass('mole');
-    killMole(hit);
-    console.log(hit);
-  }
-});
+function killMole() {
+  $(this).removeClass('mole');
+
+
+  // $li.on('click', () => {
+  // //console.log('clicked');
+  // if (true) {
+  //   const hit = $(mole).removeClass('mole');
+  //   killMole(hit);
+  //   console.log(hit);
+  // }else {
+  // }
+  // });
+  //timeOut();
 }
 
-// function hit() {
-//   if (killMole === true) {
-//     const hit = $(mole).removeClass('mole');
-//     console.log(hit);
-//   } else {
-//     return false;
-//   }
-//
-// }
+
 
 
 //STEP 4:
