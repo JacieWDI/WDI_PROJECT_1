@@ -58,18 +58,30 @@ function showMole(li) {
 
   killMole(mole);
 }
-//   $li.on('click', () => {
-//     console.log('clicked');
-//   });
-// });
 
 //STEP 3:
 //Remove mole if clicked and generally after 1000
 function killMole(mole) {
   $li.on('click', () => {
-    console.log('clicked');
-  });
+    //console.log('clicked'
+  if (true) {
+    const hit = $(mole).removeClass('mole');
+    killMole(hit);
+    console.log(hit);
+  }
+});
 }
+
+// function hit() {
+//   if (killMole === true) {
+//     const hit = $(mole).removeClass('mole');
+//     console.log(hit);
+//   } else {
+//     return false;
+//   }
+//
+// }
+
 
 //STEP 4:
 //Loop
