@@ -52,27 +52,24 @@ function pickRandomLi() {
 //To each random li selected --> display a mole - color first - visual (and audio later) - complete by adding a class
 //Add a click to the selected "mole"
 
-
 function showMole(li) {
   const mole = $(li).addClass('mole');
   console.log(mole);
+
+  killMole(mole);
 }
-
-
-
 //   $li.on('click', () => {
 //     console.log('clicked');
 //   });
 // });
 
-
-
-
-
-
-
 //STEP 3:
 //Remove mole if clicked and generally after 1000
+function killMole(mole) {
+  $li.on('click', () => {
+    console.log('clicked');
+  });
+}
 
 //STEP 4:
 //Loop
