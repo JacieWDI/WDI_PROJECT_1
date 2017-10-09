@@ -3,8 +3,8 @@
 //Additional 1: faster level(s)
 //Additional 2: two player mode player 1 first switch to player 2, compare --> winner
 
-//Sunday - review class notes/homeworks for logic required for basic game of 2x2, ideally get the basic working by lunchtime Monday
-//Monday PM - expand
+//Sunday - review class notes/homeworks for logic required for basic game of 2x2, ideally get the basic working by afternoon Monday
+//Monday eve - expand
 //Tuesday - Additional 1 / 2 time allowing & update READ.ME / start presentation info
 //Wednesday PM - Start visual & styling - graphics and sounds
 //Thursday - Complete Visual & styling
@@ -15,30 +15,56 @@
 //Start basic mechanics to work on 2x2 grid then expand
 
 //Step 1:
-//HTML 2x2 grid first - 4 lis
+//HTML 3x3 grid first - 4 lis
 //Minimal CSS styling to see layout - float left
 
-//Start --> add click event to each li
+//Start
 //Trigger COUNTER &
 //Trigger RANDOM display of 'moles'(squares) - "random li pick" for interval -->TIMEOUT
 // let counter = 1;
+//$randomLi = $('.li');
 
-$(() => {
-  const $lis = $('li');
-  console.log($lis);
-  // for (var i = 0; i < $lis.length; i++) {
-  $lis.on('click', () => {
-    console.log('clicked');
-  });
+
+
+$(setup);
+
+  $lis = $('.li');
+  // console.log($lis);
+  // Return a random li and "appear"
+  // Return a random number from 0 to array of li length
+
+  function setup() {
+    pickRandomLi();
+  }
+
+  function pickRandomLi() {
+    // for (var i = 0; i < $lis.length; i++) {
+      const $randomLi = `${Math.floor(Math.random()*10)*($lis.length-0)+0}`;
+      return $randomLi.html();
+    }
+  }
+  pickRandomLi();
+  // return $lis.html[i];
+  console.log(pickRandomLi);
 });
+
+
 //Step 2:
 //Click events attached to each random display mole - visual (and audio later)
+
+//   const $lis = $('li');
+//   console.log($lis);
+//   $lis.on('click', () => {
+//     console.log('clicked');
+//   });
+// });
 
 //Step 3:
 //Remove class and click after 1000
 
 //Step 4:
 //Loop
+//Add click event to start button at DOM initilisation
 
 //If above work then add in click event for HIT and hide plus increment score
 
