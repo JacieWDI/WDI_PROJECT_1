@@ -43,6 +43,8 @@ function setup() {
   $go = $('.go');
   $timer = $('.timer');
   $score = $('.score');
+  $replay = $('.replay');
+
   // $message = $('.message');
 
   $('.go').on('click', startGame);
@@ -79,6 +81,7 @@ function killMole() {
 //Reorganise - countdown timer, to start on Go button click
 function startGame() {
   interval = setInterval(startTimer, 1000);
+  playAgain();
 }
 
 function startTimer() {
@@ -96,14 +99,20 @@ function incrementScore() {
     score++;
   updateScorevalue();
   console.log('SCORE');
-
 }
 
 function updateScorevalue() {
   if (score>=0) $score.html(score);
 }
 
+function playAgain() {
+  $replay.on('click', );
+  score = 0;
+  count = 20;
 
+  $score.html(score);
+  $timer.html(count);
+}
 
 
 //Function - reset
