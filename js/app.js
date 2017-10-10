@@ -2,6 +2,7 @@
 //Basic game: 10sec, start/reset buttons, display, counter, scoreboard
 //Additional 1: faster level(s)
 //Additional 2: multiple moles appearing
+//Additiomal 3: autocreate larger grid
 
 //Sunday - review class notes/homeworks for logic required for basic game of 3x3, ideally get the basic working
 //Monday - start coding
@@ -32,10 +33,13 @@ let $timer = null;
 let $score = null;
 let $replay;
 let $message = null;
+// let $easy;
 
 //ADDING MORE DIFFICULT LEVELS
+
 let flash = 1500;
 let space = 2000;
+
 
 let count = 20;
 let score = 0;
@@ -48,6 +52,9 @@ function setup() {
   $replay = $('.replay');
   $message = $('.message');
   $('.go').on('click', startGame);
+
+  //Additional 1:
+  // $easy = $('.easy');
 }
 
 // STEP 1:
@@ -127,28 +134,33 @@ function playAgain() {
 
 //ADDITIONAL LEVELS
 //1. Faster levels - change counter and loop counter
+// $easy.on('click', easyGame);
+// console.log('easy');
+//
+// function easyGame() {
+//   // $easy.on('click', easyGame);
+//   // console.log('easy');
+//   flash = 2500;
+//   space = 3000;
+// }
 
-function easyGame() {
-  $easy.on('click', easyGame);
-  console.log('easy');
-  flash = 1500;
-  space = 2000;
-}
+// function normalGame() {
+//   $normal.on('click', normalGame);
+//   console.log('normal');
+//   flash = 1500;
+//   space = 2000;
+// }
+//
+// function advancedGame() {
+//   $advanced.on('click', advancedGame);
+//   console.log('advanced');
+//   flash = 1500;
+//   space = 2000;
+// }
 
-function normalGame() {
-  $normal.on('click', normalGame);
-  console.log('normal');
-  flash = 1500;
-  space = 2000;
-}
-
-function advancedGame() {
-  $advanced.on('click', advancedGame);
-  console.log('advanced');
-  flash = 1500;
-  space = 2000;
-}
 //2. Multiple random moles appearing (larger grid)
+//3. Automate larger grid creation for levels
+
 
 
 //STYLING - visual & audio
