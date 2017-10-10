@@ -32,11 +32,9 @@ let $li = null;
 let interval = null;
 let $timer = null
 
-// const $timer = $('.timer');
-// const $go = $('.go');
 let count = 20;
+let score = 0;
 
-// startGame();
 //works but interval not in place now!!
 
 
@@ -45,6 +43,7 @@ function setup() {
   $li = $('li');
   $go = $('.go');
   $timer = $('.timer');
+  $score = $('.score');
 
   $('.go').on('click', startGame);
 }
@@ -74,6 +73,7 @@ function showMole(li) {
 //Call increment score function within here
 function killMole() {
   $(this).removeClass('mole');
+
 }
 
 //STEP 4:
@@ -91,20 +91,25 @@ function startTimer() {
   if (count<= 0) {
     clearInterval(interval);
   }
-
   pickRandomLi();
+}
+
+function incrementScore() {
+  if (killMole === true) {
+    score++;
+    updateScorevalue();
+  }
+}
+
+function updateScorevalue() {
+  if (score>=0) $score.html(score);
+  $input.val('');
 }
 
 
 
+
 //Function - reset
-
-
-// function incrementScore() {
-// }
-
-
-
 //function gameover
 
 
