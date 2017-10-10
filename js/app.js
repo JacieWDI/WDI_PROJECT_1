@@ -3,9 +3,10 @@
 //Additional 1: faster level(s)
 //Additional 2: multiple moles appearing
 
-//Sunday - review class notes/homeworks for logic required for basic game of 2x2, ideally get the basic working by afternoon Monday
-//Monday eve - expand
-//Tuesday - Additional 1 / 2 time allowing & update READ.ME / start presentation info
+//Sunday - review class notes/homeworks for logic required for basic game of 2x2, ideally get the basic working
+//Monday - start coding
+//Tuesday - finish basic logic
+//Wednesday AM - any additional logic / levels
 //Wednesday PM - Start visual & styling - graphics and sounds
 //Thursday - Complete Visual & styling
 //Friday - Present
@@ -26,32 +27,27 @@
 
 $(setup);
 
-//Initalise DOM
-//SET GLOBAL VARIABLES
+//VARIABLES
 let $li = null;
-// let $interval = null;
-// let $timeContainer = null;
 
 let interval = null;
 let counter = 0;
 let startSomething;
 
 
-
+// let $interval = null;
+// let $timeContainer = null;
 // let $score = null;
 // let $timer = null;
 
 
 
-// console.log($li);
-// STEP 1: Return a random li
-// Return a random number from 0 to array of li length
 function setup() {
   $li = $('li');
   startGame();
-
 }
-
+// STEP 1: Return a random li
+// Return a random number from 0 to array of li length
 function pickRandomLi() {
   // console.log($li);
   const li = $li[Math.floor(Math.random()*$li.length)];
@@ -77,6 +73,7 @@ function showMole(li) {
 
 //STEP 3:
 //Remove mole (and therefore class) if clicked
+//Call increment score function within here
 function killMole() {
   $(this).removeClass('mole');
 }
@@ -88,12 +85,34 @@ function killMole() {
 //add interval to start game,
 //then add increment
 
+//Start game function added to group functions to run on set-up
+//Function - countdown timer, to start on Go button click
+
+
+// //move to top later
+// const $timer = $('.timer');
+// const $go = $('.go');
+// $go.on('click', startTimer);
+
+
+// function startTimer() {
+//   let counter2 = 21;
+//   const startCountDown = setInterval(runThis, 1000);
+//   function runThis() {
+//     counter2 --;
+//     // console.log(counter);
+//     checkTimerValue();
+//     $timer.html(counter2);
+//   }
+//   function checkTimerValue(){
+//     if (counter2 <= 0){
+//       clearInterval(startCountDown);
+// }
 
 function startGame() {
   pickRandomLi();
   startSomething = setInterval(callFunction, 2000);
 }
-
 //INTERVAL LOOP - recall later for speed
 // let counter = 0;
 
@@ -115,19 +134,15 @@ function checkValue() {
 
 
 
-
-
+//Function - reset
 
 
 // function incrementScore() {
 // }
 
-//
-//If above work then add in click event for HIT and hide plus increment score
-//function countdown
+
+
 //function gameover
-//function reset
-//
 
 
 //ADDITIONAL 1/2
