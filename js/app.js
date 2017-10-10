@@ -6,7 +6,7 @@
 
 //Sunday - review class notes/homeworks for logic required for basic game of 3x3, ideally get the basic working
 //Monday - start coding
-//Tuesday - finish basic logic
+//Tuesday - finish basic logic - EXPAND!
 //Wednesday AM - any additional logic / levels
 //Wednesday PM - Start visual & styling - graphics and sounds
 //Thursday - Complete Visual & styling
@@ -35,10 +35,10 @@ let $replay;
 let $message = null;
 // let $easy;
 
-//ADDING MORE DIFFICULT LEVELS
+//FOR ADDING SPEED LATER - change to let
 
-let flash = 1500;
-let space = 2000;
+const flash = 1500;
+const space = 2000;
 
 
 let count = 20;
@@ -69,17 +69,17 @@ function showMole(li) {
   const mole = $(li).addClass('mole');
   $(li).one('click', killMole);
 
-  //BASIC GAME LOGIC
-  // setTimeout(function() {
-  //   $(li).removeClass('mole');
-  //   $(li).off('click');
-  // }, 1000);
-
-  //TRY STARTING TIMEOUT AND INTERVAL VALUES AS VARIABLES FOR MORE DIFFICULT LEVELS
+  BASIC GAME LOGIC
   setTimeout(function() {
     $(li).removeClass('mole');
     $(li).off('click');
-  }, flash);
+  }, 1000);
+
+  //TRY STARTING TIMEOUT AND INTERVAL VALUES AS VARIABLES FOR MORE DIFFICULT LEVELS
+//   setTimeout(function() {
+//     $(li).removeClass('mole');
+//     $(li).off('click');
+//   }, flash);
 }
 
 //STEP 3:
@@ -132,8 +132,17 @@ function playAgain() {
   $message.html('PLAY BALL!');
 }
 
+//EXPAND GRID!
+//CSS grid layout??
+//Random div pick instead of li?
+//Grid - define grid tracks not the lines --> numbered lines for positioning
+//Use CSS to create grid and then add element to each grid square for random function
+
+
+
 //ADDITIONAL LEVELS
-//1. Faster levels - change counter and loop counter
+//1. Multiple random moles appearing (larger grid)
+//2. Faster levels - change counter and loop counter
 // $easy.on('click', easyGame);
 // console.log('easy');
 //
@@ -158,7 +167,7 @@ function playAgain() {
 //   space = 2000;
 // }
 
-//2. Multiple random moles appearing (larger grid)
+
 //3. Automate larger grid creation for levels
 
 
