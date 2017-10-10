@@ -16,7 +16,7 @@
 //Start basic mechanics to work on 3x3 grid then expand
 
 //Step 1:
-//HTML 3x3 grid first - 4 lis
+//HTML 3x3 grid first - 9 lis
 //Minimal CSS styling to see layout - float left
 
 //Start
@@ -32,11 +32,11 @@ let $li = null;
 let interval = null;
 let $timer = null;
 let $score = null;
+let $replay;
 // let $message = null;
 
 let count = 20;
 let score = 0;
-// let interval = null;
 
 function setup() {
   $li = $('li');
@@ -44,9 +44,7 @@ function setup() {
   $timer = $('.timer');
   $score = $('.score');
   $replay = $('.replay');
-
   // $message = $('.message');
-
   $('.go').on('click', startGame);
 }
 
@@ -105,8 +103,11 @@ function updateScorevalue() {
   if (score>=0) $score.html(score);
 }
 
+
+
 function playAgain() {
-  $replay.on('click', );
+  $replay.on('click', playAgain);
+  console.log('REPLAY');
   score = 0;
   count = 20;
 
@@ -114,9 +115,7 @@ function playAgain() {
   $timer.html(count);
 }
 
-
-//Function - reset
-//function gameover
+//game over screen
 
 
 //ADDITIONAL 1/2
