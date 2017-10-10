@@ -22,8 +22,6 @@
 //Start
 //Trigger COUNTER &
 //Trigger RANDOM display of 'moles'(squares) - "random li pick" for interval -->TIMEOUT
-// let counter = 1;
-//$randomLi = $('.li');
 
 $(setup);
 
@@ -34,6 +32,10 @@ let $timer = null;
 let $score = null;
 let $replay;
 let $message = null;
+
+//ADDING MORE DIFFICULT LEVELS
+let flash = 1500;
+let space = 2000;
 
 let count = 20;
 let score = 0;
@@ -60,10 +62,17 @@ function showMole(li) {
   const mole = $(li).addClass('mole');
   $(li).one('click', killMole);
 
+  //BASIC GAME LOGIC
+  // setTimeout(function() {
+  //   $(li).removeClass('mole');
+  //   $(li).off('click');
+  // }, 1000);
+
+  //TRY STARTING TIMEOUT AND INTERVAL VALUES AS VARIABLES FOR MORE DIFFICULT LEVELS
   setTimeout(function() {
     $(li).removeClass('mole');
     $(li).off('click');
-  }, 1500);
+  }, flash);
 }
 
 //STEP 3:
@@ -78,7 +87,7 @@ function killMole() {
 //STEP 4:
 //Reorganise - countdown timer, to start on Go button click
 function startGame() {
-  interval = setInterval(startTimer, 1000);
+  interval = setInterval(startTimer, space);
   playAgain();
 }
 
@@ -113,15 +122,33 @@ function playAgain() {
 
   $score.html(score);
   $timer.html(count);
-  $message.html('Play ball!');
+  $message.html('PLAY BALL!');
 }
 
-//game over screen
+//ADDITIONAL LEVELS
+//1. Faster levels - change counter and loop counter
 
+function easyGame() {
+  $easy.on('click', easyGame);
+  console.log('easy');
+  flash = 1500;
+  space = 2000;
+}
 
-//ADDITIONAL 1/2
-//Faster levels - change counter and loop counter
-//Multiple random moles appearing
+function normalGame() {
+  $normal.on('click', normalGame);
+  console.log('normal');
+  flash = 1500;
+  space = 2000;
+}
+
+function advancedGame() {
+  $advanced.on('click', advancedGame);
+  console.log('advanced');
+  flash = 1500;
+  space = 2000;
+}
+//2. Multiple random moles appearing (larger grid)
 
 
 //STYLING - visual & audio
