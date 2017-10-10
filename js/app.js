@@ -33,7 +33,7 @@ let interval = null;
 let $timer = null;
 let $score = null;
 let $replay;
-// let $message = null;
+let $message = null;
 
 let count = 20;
 let score = 0;
@@ -44,7 +44,7 @@ function setup() {
   $timer = $('.timer');
   $score = $('.score');
   $replay = $('.replay');
-  // $message = $('.message');
+  $message = $('.message');
   $('.go').on('click', startGame);
 }
 
@@ -88,6 +88,7 @@ function startTimer() {
 
   if (count<= 0) {
     clearInterval(interval);
+    $message.html('GAME OVER!');
   }
   pickRandomLi();
 }
@@ -97,13 +98,12 @@ function incrementScore() {
     score++;
   updateScorevalue();
   console.log('SCORE');
+  // $message.html('HOME RUN!');
 }
 
 function updateScorevalue() {
   if (score>=0) $score.html(score);
 }
-
-
 
 function playAgain() {
   $replay.on('click', playAgain);
@@ -113,6 +113,7 @@ function playAgain() {
 
   $score.html(score);
   $timer.html(count);
+  $message.html('Play ball!');
 }
 
 //game over screen
