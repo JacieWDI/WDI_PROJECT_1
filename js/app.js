@@ -29,23 +29,18 @@ $(setup);
 
 //VARIABLES
 let $li = null;
-
 let interval = null;
-let counter = 0;
-let startSomething;
 
-
-// let $interval = null;
-// let $timeContainer = null;
-// let $score = null;
-// let $timer = null;
-
-
+const $timer = $('.timer');
+const $go = $('.go');
+let count = 20;
 
 function setup() {
   $li = $('li');
-  startGame();
+
+  $go.on('click', startGame);
 }
+
 // STEP 1: Return a random li
 // Return a random number from 0 to array of li length
 function pickRandomLi() {
@@ -85,52 +80,62 @@ function killMole() {
 //add interval to start game,
 //then add increment
 
+
+
+
+//INTERVAL LOOP - call random function for loop
+
+//set interval to be 1000 between random li function
 //Start game function added to group functions to run on set-up
+
 //Function - countdown timer, to start on Go button click
 
 
-// //move to top later
-// const $timer = $('.timer');
-// const $go = $('.go');
-// $go.on('click', startTimer);
-
-
-// function startTimer() {
-//   let counter2 = 21;
-//   const startCountDown = setInterval(runThis, 1000);
-//   function runThis() {
-//     counter2 --;
-//     // console.log(counter);
-//     checkTimerValue();
-//     $timer.html(counter2);
-//   }
-//   function checkTimerValue(){
-//     if (counter2 <= 0){
-//       clearInterval(startCountDown);
-// }
 
 function startGame() {
-  startSomething = setInterval(callFunction, 2000);
+  startInterval = setInterval(startTimer, 1000);
 }
-//INTERVAL LOOP - recall later for speed
-// let counter = 0;
 
-//set interval to be 1000 between random li function
+// function interval() {
+//   counter ++;
+//   console.log(counter);
+//   checkValue();
+//call random li function to run loop
+// pickRandomLi();
 
-function callFunction() {
-  counter ++;
-  console.log(counter);
-  checkValue();
+//Number of times to run interval before clearing
+// function checkValue() {
+//   if (counter >= 10 ) {
+//     clearInterval(startInterval);
+//   }
+// }
+
+function startTimer() {
+  count --;
+  $timer.html(count);
+
+  if (timer<= 0) {
+    clearInterval(interval);
+  }
 
   pickRandomLi();
 }
 
-//Number of times to run interval before clearing
-function checkValue() {
-  if ( counter >= 3 ) {
-    clearInterval(startSomething);
-  }
-}
+
+// const startCountDown = setInterval(runThis, 1000);
+
+
+// function runThis() {
+//   counter2 --;
+//   console.log(counter2);
+//   checkTimerValue();
+//   $timer.html(counter2);
+// }
+// function checkTimerValue(){
+//   if (counter2 <= 0){
+//     clearInterval(startCountDown);
+//   }
+// }
 
 
 
