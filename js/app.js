@@ -110,7 +110,6 @@ function killMole() {
 // }
 
 function startGame() {
-  pickRandomLi();
   startSomething = setInterval(callFunction, 2000);
 }
 //INTERVAL LOOP - recall later for speed
@@ -122,6 +121,8 @@ function callFunction() {
   counter ++;
   console.log(counter);
   checkValue();
+
+  pickRandomLi();
 }
 
 //Number of times to run interval before clearing
