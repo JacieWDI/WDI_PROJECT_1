@@ -3,7 +3,7 @@
 //Additional 1: faster level(s)
 //Additional 2: multiple moles appearing
 
-//Sunday - review class notes/homeworks for logic required for basic game of 2x2, ideally get the basic working
+//Sunday - review class notes/homeworks for logic required for basic game of 3x3, ideally get the basic working
 //Monday - start coding
 //Tuesday - finish basic logic
 //Wednesday AM - any additional logic / levels
@@ -13,7 +13,7 @@
 
 //PSEUDOCODE
 //BASIC GAME:
-//Start basic mechanics to work on 2x2 grid then expand
+//Start basic mechanics to work on 3x3 grid then expand
 
 //Step 1:
 //HTML 3x3 grid first - 4 lis
@@ -32,33 +32,30 @@ let $li = null;
 let interval = null;
 let $timer = null;
 let $score = null;
+// let $message = null;
 
 let count = 20;
 let score = 0;
-
-//works but interval not in place now!!
-
-
+// let interval = null;
 
 function setup() {
   $li = $('li');
   $go = $('.go');
   $timer = $('.timer');
   $score = $('.score');
+  // $message = $('.message');
 
   $('.go').on('click', startGame);
 }
 
 // STEP 1:
 function pickRandomLi() {
-  // console.log($li);
   const li = $li[Math.floor(Math.random()*$li.length)];
   console.log(li);
   showMole(li);
 }
 
 //STEP 2:
-
 function showMole(li) {
   const mole = $(li).addClass('mole');
   $(li).one('click', killMole);
@@ -75,14 +72,11 @@ function showMole(li) {
 function killMole() {
   $(this).removeClass('mole');
   console.log('KILL');
-
   incrementScore();
 }
 
 //STEP 4:
-
 //Reorganise - countdown timer, to start on Go button click
-
 function startGame() {
   interval = setInterval(startTimer, 1000);
 }
@@ -98,18 +92,15 @@ function startTimer() {
 }
 
 function incrementScore() {
-  if (killMole === true) {
+  if(killMole)
     score++;
-    updateScorevalue();
-  } else {
-    score;
-    updateScorevalue;
-  }
+  updateScorevalue();
+  console.log('SCORE');
 
 }
 
 function updateScorevalue() {
-  if (score>=0) $score.val(score);
+  if (score>=0) $score.html(score);
 }
 
 
