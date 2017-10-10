@@ -30,8 +30,9 @@ $(setup);
 //VARIABLES
 let $li = null;
 let interval = null;
+let $timer = null
 
-const $timer = $('.timer');
+// const $timer = $('.timer');
 // const $go = $('.go');
 let count = 20;
 
@@ -42,8 +43,10 @@ let count = 20;
 
 function setup() {
   $li = $('li');
+  $go = $('.go');
+  $timer = $('.timer');
 
-  // $go.on('click', startGame);
+  $('.go').on('click', startGame);
 }
 
 // STEP 1:
@@ -80,7 +83,6 @@ function killMole() {
 function startGame() {
   interval = setInterval(startTimer, 1000);
 }
-
 
 function startTimer() {
   count --;
