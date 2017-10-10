@@ -30,7 +30,8 @@ $(setup);
 //VARIABLES
 let $li = null;
 let interval = null;
-let $timer = null
+let $timer = null;
+let $score = null;
 
 let count = 20;
 let score = 0;
@@ -73,7 +74,9 @@ function showMole(li) {
 //Call increment score function within here
 function killMole() {
   $(this).removeClass('mole');
+  console.log('KILL');
 
+  incrementScore();
 }
 
 //STEP 4:
@@ -98,12 +101,15 @@ function incrementScore() {
   if (killMole === true) {
     score++;
     updateScorevalue();
+  } else {
+    score;
+    updateScorevalue;
   }
+
 }
 
 function updateScorevalue() {
-  if (score>=0) $score.html(score);
-  $input.val('');
+  if (score>=0) $score.val(score);
 }
 
 
