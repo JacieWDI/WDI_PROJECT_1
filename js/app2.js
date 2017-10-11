@@ -40,27 +40,43 @@ function setup() {
 
 // STEP 1: GENERATING RANDOM LI
 
-function pickRandomLi() {
-  const li = $li[Math.floor(Math.random()*$li.length)];
-  console.log(li);
-  showMole(li);
-}
+// function pickRandomLi() {
+//   const li = $li[Math.floor(Math.random()*$li.length)];
+//   console.log(li);
+//   showMole(li);
+// }
 //need loop function which also does not pick the same element once in any one time (i.e. sampling from fixed array)
 
-function createRandomRangeLi(arr, n) {
-  var result = new Array(n),
-  len = $li.length,
-  taken = new Array($li.length);
-  if (n>$li.length)
-  throw new RangeError("getRandom: more elements taken than available");
-  while(n--) {
-    var x = Math.floor(Math.random()*$li.length);
-    result[n] = arr[x in taken ? taken[x] : x];
-    taken[x] = --$li.length;
-  }
-  return result;
-  console.log(result);
+//Generate random number of moles 1->10
+function randomNoMoles() {
+  return noMoles = Math.floor(Math.random()*10);
 }
+randomNoMoles();
+console.log(randomNoMoles());
+
+//Need to store random lis in an array
+function pickRandomLis() {
+  array (randomNoMoles) = randomNoMoles() * ($li[Math.floor(Math.random()*$li.length)]);
+  showMole(lis);
+}
+pickRandomLis()
+console.log(pickRandomLis());
+// function createRandomRangeLi(arr, n) {
+//   var result = new Array(n),
+//   len = $li.length,
+//   taken = new Array($li.length);
+//   if (n>$li.length)
+//   throw new RangeError("getRandom: more elements taken than available");
+//   while(n--) {
+//     var x = Math.floor(Math.random()*$li.length);
+//     result[n] = arr[x in taken ? taken[x] : x];
+//     taken[x] = --$li.length;
+//   }
+//   return result;
+//   console.log(result);
+// }
+
+
 
 //STEP 2: GENERATING "MOLE" AT RANDOM LI
 function showMole(li) {
@@ -103,7 +119,7 @@ function startTimer() {
     clearInterval(interval);
     $message.html('GAME OVER!');
   }
-  pickRandomLi();
+  pickRandomLis();
 }
 
 function incrementScore() {

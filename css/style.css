@@ -21,21 +21,21 @@ h2 {
 }
 ul {
   margin: 10px auto;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background: #787171;
 }
 
 li {
-  width: 196px;
+  width: 96px;
   margin: 2px;
-  height: 196px;
-  line-height: 196px;
+  height: 96px;
+  line-height: 96px;
   background: #F2F1F1;
   color: #695D5D;
   text-align: center;
   float: left;
-  font-size: 150px;
+  font-size: 80px;
 }
 
 .mole {
@@ -52,7 +52,6 @@ footer {
   height: 50px;
   background-color: #695D5D;
   clear: both;
-
 }
 /*GRID CREATION VIA CSS INFO*/
 /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout*/
