@@ -1,28 +1,9 @@
-//PLAN - Whack a "mole" -Whack-a-ball / whack a Raider!
-//Basic game: 10sec, start/reset buttons, display, counter, scoreboard
-//Additional 1: faster level(s)
-//Additional 2: multiple moles appearing
-//Additiomal 3: autocreate larger grid
+//EXPANSION TO BASIC GAME: multiple moles appearing
+//Additional 2: faster level(s)
 
-//Sunday - review class notes/homeworks for logic required for basic game of 3x3, ideally get the basic working
-//Monday - start coding
-//Tuesday - finish basic logic - EXPAND!
-//Wednesday AM - any additional logic / levels
-//Wednesday PM - Start visual & styling - graphics and sounds
+//Wednesday DAY - EXPAND TO ACTUAL GAME
+//Wednesday EVE - Start visual & styling - graphics and sounds
 //Thursday - Complete Visual & styling
-//Friday - Present
-
-//PSEUDOCODE
-//BASIC GAME:
-//Start basic mechanics to work on 3x3 grid then expand
-
-//Step 1:
-//HTML 3x3 grid first - 9 lis
-//Minimal CSS styling to see layout - float left
-
-//Start
-//Trigger COUNTER &
-//Trigger RANDOM display of 'moles'(squares) - "random li pick" for interval -->TIMEOUT
 
 $(setup);
 
@@ -57,19 +38,19 @@ function setup() {
   // $easy = $('.easy');
 }
 
-// STEP 1:
+// STEP 1: GENERATING RANDOM LI
 function pickRandomLi() {
   const li = $li[Math.floor(Math.random()*$li.length)];
   console.log(li);
   showMole(li);
 }
 
-//STEP 2:
+//STEP 2: GENERATING "MOLE" AT RANDOM LI
 function showMole(li) {
   const mole = $(li).addClass('mole');
   $(li).one('click', killMole);
 
-  BASIC GAME LOGIC
+  //BASIC GAME LOGIC
   setTimeout(function() {
     $(li).removeClass('mole');
     $(li).off('click');
@@ -82,7 +63,7 @@ function showMole(li) {
 //   }, flash);
 }
 
-//STEP 3:
+//STEP 3: KILL "MOLE" - REMOVING CLASS AND INCREMENT SCORE
 //Remove mole (and therefore class) if clicked
 //Call increment score function within here
 function killMole() {
@@ -91,8 +72,7 @@ function killMole() {
   incrementScore();
 }
 
-//STEP 4:
-//Reorganise - countdown timer, to start on Go button click
+//STEP 4: START GAME FUNCTION ON GO BUTTON TRIGGERING INTERVAL AND COUNTDOWN TIMER
 function startGame() {
   interval = setInterval(startTimer, space);
   playAgain();
@@ -133,6 +113,7 @@ function playAgain() {
 }
 
 //EXPAND GRID!
+//GENNERATING MULTIPLE RANDOM MOLES
 //CSS grid layout??
 //Random div pick instead of li?
 //Grid - define grid tracks not the lines --> numbered lines for positioning
@@ -141,8 +122,7 @@ function playAgain() {
 
 
 //ADDITIONAL LEVELS
-//1. Multiple random moles appearing (larger grid)
-//2. Faster levels - change counter and loop counter
+//1. Faster levels - change counter and loop counter
 // $easy.on('click', easyGame);
 // console.log('easy');
 //
@@ -167,11 +147,6 @@ function playAgain() {
 //   space = 2000;
 // }
 
-
-//3. Automate larger grid creation for levels
-
-
-
-//STYLING - visual & audio
+//STYLING - VISUAL AND AUDIO - THURS
 //Grey / White / Red / Black only --> find a standard color mix palette for all work
 //Sports based - softball
