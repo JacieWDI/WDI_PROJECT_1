@@ -9,7 +9,6 @@ $(setup);
 
 //VARIABLES
 let $li = null;
-let $go;
 let interval = null;
 let $timer = null;
 let $score = null;
@@ -35,33 +34,33 @@ function setup() {
   $('.go').on('click', startGame);
 
   //GAMETIME AND SPEED LEVELS
-  const $advanced = $('.advanced');
-
-  //ADVANCED LEVEL
-  $advanced.on('click', () => {
-    if (flash !== 1500) {
-      advanced();
-    } else {
-      normal();
-    }
-  });
+  // const $advanced = $('.advanced');
 }
+//ADVANCED LEVEL
+//   $advanced.on('click', () => {
+//     if (flash !== 1500) {
+//       advanced();
+//     } else {
+//       normal();
+//     }
+//   });
+// }
 
 
 //INCREASED SPEED LEVEL
 //1. Faster level - change counter and loop counter
 
 
-
-function normal() {
-  flash = 2000;
-  space = 2500;
-}
-
-function advanced() {
-  flash = 1500;
-  space = 2000;
-}
+//
+// function normal() {
+//   flash = 2000;
+//   space = 2500;
+// }
+//
+// function advanced() {
+//   flash = 1500;
+//   space = 2000;
+// }
 
 //GENERATING RANDOM NUMBER OF MOLES (up to 10)
 function pickRandomLi() {
@@ -70,33 +69,33 @@ function pickRandomLi() {
   // console.log(li);
   // showMole(li);
   //FROM SAME SIZE ARRAY AS LIS
-  // let newCounter = 0;
-  // const possibleIndex = [];
-  // for (var i = 0; i < 25; i++) {
-  //   possibleIndex.push(i);
-  //   newCounter++;
-  // }
-  //
-  // const randomNoMoles = Math.floor(Math.random()*10+1);
-  //
-  // for (var j= 0; j < randomNoMoles; j++) {
-  //   const chosenIndex = Math.floor(Math.random()*possibleIndex.length);
-  //   const li = $li[chosenIndex];
-  //   possibleIndex.splice(chosenIndex,1);
-  //
-  //   showMole(li);
-  // }
-
+  let newCounter = 0;
+  const possibleIndex = [];
   for (var i = 0; i < 25; i++) {
-    const li = $li[Math.floor(Math.random()*$li.length)];
-    setTimeout(() => {
-      showMole(li);
-    }, 1000*i);
+    possibleIndex.push(i);
+    newCounter++;
+  }
+
+  const randomNoMoles = Math.floor(Math.random()*10+1);
+
+  for (var j= 0; j < randomNoMoles; j++) {
+    const chosenIndex = Math.floor(Math.random()*possibleIndex.length);
+    const li = $li[chosenIndex];
+    possibleIndex.splice(chosenIndex,1);
+
+    showMole(li);
   }
 }
+//   for (var i = 0; i < 25; i++) {
+//     const li = $li[Math.floor(Math.random()*$li.length)];
+//     setTimeout(() => {
+//       showMole(li);
+//     }, 1000*i);
+//   }
+// }
 //STEP 2: GENERATING "MOLE" AT RANDOM LI
 function showMole(li) {
-console.log(interval)
+  console.log(interval)
   const mole = $(li).addClass('mole');
   $(li).one('click', killMole);
 
@@ -104,7 +103,7 @@ console.log(interval)
   setTimeout(function() {
     $(li).removeClass('mole');
     $(li).off('click');
-  }, 1000);
+  }, flash);
 }
 //TRY STARTING TIMEOUT AND INTERVAL VALUES AS VARIABLES FOR MORE DIFFICULT LEVELS
 //   setTimeout(function() {
@@ -139,7 +138,7 @@ function startTimer() {
 
 function incrementScore() {
   if(killMole)
-    score++;
+  score++;
   updateScorevalue();
   console.log('SCORE');
   // $message.html('HOME RUN!');
