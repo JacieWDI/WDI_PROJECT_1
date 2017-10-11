@@ -18,9 +18,9 @@ let $advanced;
 
 //FOR ADDING GAMETIME AND SPEED LEVELS LATER - change to let
 
-let flash = 1000;
-let space = 1000;
-
+// let flash = 2500;
+// let space = 3000;
+//
 let count = 20;
 let score = 0;
 
@@ -46,12 +46,18 @@ $('.advanced').on('click'); {
   console.log('advanced');
   if(this);
   advancedGame();
+  } else if(this) = false; {
+  normalGame();
+}
+
+function normal() {
+let flash = 2500;
+let space = 3000;
 }
 
 function advancedGame() {
-  count = 20;
-  flash = 1000;
-  space = 500;
+  flash = 1500;
+  space = 2000;
 }
 
 //GENERATING RANDOM NUMBER OF MOLES (up to 10)
