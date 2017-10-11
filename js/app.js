@@ -1,7 +1,7 @@
 //EXPANSION TO BASIC GAME: multiple moles appearing
 //Additional 2: faster level(s)
 
-//Wednesday DAY - EXPAND TO ACTUAL GAME
+//Wed PM - WORK OUT HOW TO DIVIDE LEVELS AND TIMING
 //Wednesday EVE - Start visual & styling - graphics and sounds
 //Thursday - Complete Visual & styling
 
@@ -14,13 +14,12 @@ let $timer = null;
 let $score = null;
 let $replay;
 let $message = null;
-// let $easy;
+let $advanced;
 
-//FOR ADDING SPEED LATER - change to let
+//FOR ADDING GAMETIME AND SPEED LEVELS LATER - change to let
 
-const flash = 1500;
-const space = 2000;
-
+let flash = 1000;
+let space = 1000;
 
 let count = 20;
 let score = 0;
@@ -34,16 +33,34 @@ function setup() {
   $message = $('.message');
   $('.go').on('click', startGame);
 
-  //Additional 1:
-  // $easy = $('.easy');
+//GAMETIME AND SPEED LEVELS
+
+  $advanced = $('.advanced');
 }
 
-// STEP 1: GENERATING RANDOM LI
+//SPEED AND GAMETIME LEVEL
+//1. Faster level - change counter and loop counter
 
+//ADVANCED LEVEL
+$('.advanced').on('click'); {
+  console.log('advanced');
+  if(this);
+  advancedGame();
+}
+
+function advancedGame() {
+  count = 20;
+  flash = 1000;
+  space = 500;
+}
+
+//GENERATING RANDOM NUMBER OF MOLES (up to 10)
 function pickRandomLi() {
+  //PICKING ONE RANDOM MOLE
   // const li = $li[Math.floor(Math.random()*$li.length)];
   // console.log(li);
   // showMole(li);
+  //FROM SAME SIZE ARRAY AS LIS
   let newCounter = 0;
   const possibleIndex = [];
   for (var i = 0; i < 25; i++) {
@@ -60,16 +77,7 @@ function pickRandomLi() {
 
     showMole(li);
   }
-
-
-
-  // const randomN1 = Math.floor(Math.random() * 25);
-  // const li = $li[randomN1];
-  //
-  // showMole(li);
 }
-//need loop function which also does not pick the same element once in any one time (i.e. sampling from fixed array)
-
 //STEP 2: GENERATING "MOLE" AT RANDOM LI
 function showMole(li) {
   const mole = $(li).addClass('mole');
@@ -80,24 +88,22 @@ function showMole(li) {
     $(li).removeClass('mole');
     $(li).off('click');
   }, 1000);
-
-  //TRY STARTING TIMEOUT AND INTERVAL VALUES AS VARIABLES FOR MORE DIFFICULT LEVELS
+}
+//TRY STARTING TIMEOUT AND INTERVAL VALUES AS VARIABLES FOR MORE DIFFICULT LEVELS
 //   setTimeout(function() {
 //     $(li).removeClass('mole');
 //     $(li).off('click');
 //   }, flash);
-}
+// }
 
-//STEP 3: KILL "MOLE" - REMOVING CLASS AND INCREMENT SCORE
-//Remove mole (and therefore class) if clicked
-//Call increment score function within here
+//KILL "MOLE" - REMOVING CLASS AND INCREMENT SCORE
 function killMole() {
   $(this).removeClass('mole');
   console.log('KILL');
   incrementScore();
 }
 
-//STEP 4: START GAME FUNCTION ON GO BUTTON TRIGGERING INTERVAL AND COUNTDOWN TIMER
+//START GAME FUNCTION ON GO BUTTON TRIGGERING INTERVAL AND COUNTDOWN TIMER
 function startGame() {
   interval = setInterval(startTimer, space);
   playAgain();
@@ -126,6 +132,7 @@ function updateScorevalue() {
   if (score>=0) $score.html(score);
 }
 
+//PLAY AGAIN RESET
 function playAgain() {
   $replay.on('click', playAgain);
   console.log('REPLAY');
@@ -137,40 +144,7 @@ function playAgain() {
   $message.html('PLAY BALL!');
 }
 
-//EXPAND GRID!
-//GENNERATING MULTIPLE RANDOM MOLES
-//CSS grid layout??
-//Random div pick instead of li?
-//Grid - define grid tracks not the lines --> numbered lines for positioning
-//Use CSS to create grid and then add element to each grid square for random function
 
-
-
-//ADDITIONAL LEVELS
-//1. Faster levels - change counter and loop counter
-// $easy.on('click', easyGame);
-// console.log('easy');
-//
-// function easyGame() {
-//   // $easy.on('click', easyGame);
-//   // console.log('easy');
-//   flash = 2500;
-//   space = 3000;
-// }
-
-// function normalGame() {
-//   $normal.on('click', normalGame);
-//   console.log('normal');
-//   flash = 1500;
-//   space = 2000;
-// }
-//
-// function advancedGame() {
-//   $advanced.on('click', advancedGame);
-//   console.log('advanced');
-//   flash = 1500;
-//   space = 2000;
-// }
 
 //STYLING - VISUAL AND AUDIO - THURS
 //Grey / White / Red / Black only --> find a standard color mix palette for all work
