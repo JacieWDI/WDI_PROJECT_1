@@ -56,10 +56,29 @@ console.log(randomNoMoles());
 
 //Need to store random lis in an array
 function pickRandomLis() {
-  array (randomNoMoles) = randomNoMoles() * ($li[Math.floor(Math.random()*$li.length)]);
-  showMole(lis);
+  const randomN1 = Math.floor(Math.random() * 25);
+  const li = $li[randomN1];
+
+  const secondLi = $li[gerenateSecondN()];
+
+  function gerenateSecondN() {
+    let randomN2 = Math.floor(Math.random() * 25);
+    while (randomN2 === randomN1) {
+      randomN2 = Math.floor(Math.random() * 25);
+    }
+    return randomN2;
+  }
+
+  console.log(li);
+  showMole(li);
+  showMole(secondLi);
+
+
+  // ??? (randomNoMoles) = randomNoMoles() * ($li[Math.floor(Math.random()*$li.length)]);
+  // showMole(lis);
 }
-pickRandomLis()
+
+pickRandomLis();
 console.log(pickRandomLis());
 // function createRandomRangeLi(arr, n) {
 //   var result = new Array(n),
