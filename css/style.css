@@ -24,6 +24,7 @@ ul {
   width: 500px;
   height: 500px;
   background: #787171;
+  cursor: url('../images/bat.jpg'),crosshair;
 }
 
 li {
@@ -39,14 +40,24 @@ li {
 }
 
 .mole {
-  background-color: #E90505;
+  /*background-color: #E90505;*/
+  background-image:url('../images/03_Baseball-256.png');
+  background-repeat: none;
+  background-size: contain;
 }
+
+
 
 button {
   margin: 0 auto;
   color: #E90505;
   background-color: #F2F1F1;
+  cursor: pointer;
 }
+
+/*.go {
+  cursor: pointer;
+}*/
 
 footer {
   height: 50px;

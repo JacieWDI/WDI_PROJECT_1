@@ -14,13 +14,13 @@ let $timer = null;
 let $score = null;
 let $replay;
 let $message = null;
-let $advanced;
+// let $advanced;
 
 //FOR ADDING GAMETIME AND SPEED LEVELS LATER - change to let
 
-// let flash = 2500;
-// let space = 3000;
-//
+let flash = 2500;
+let space = 3000;
+
 let count = 20;
 let score = 0;
 
@@ -35,30 +35,31 @@ function setup() {
 
 //GAMETIME AND SPEED LEVELS
 
-  $advanced = $('.advanced');
+  // $advanced = $('.advanced');
 }
+
 
 //SPEED AND GAMETIME LEVEL
 //1. Faster level - change counter and loop counter
 
 //ADVANCED LEVEL
-$('.advanced').on('click'); {
-  console.log('advanced');
-  if(this);
-  advancedGame();
-  } else if(this) = false; {
-  normalGame();
-}
-
-function normal() {
-let flash = 2500;
-let space = 3000;
-}
-
-function advancedGame() {
-  flash = 1500;
-  space = 2000;
-}
+// $('.advanced').on('click'); {
+//   console.log('advanced');
+//   if(this);
+//   advancedGame();
+//   } else if(this) = false; {
+//   normalGame();
+// }
+//
+// function normal() {
+// let flash = 2500;
+// let space = 3000;
+// }
+//
+// function advancedGame() {
+//   flash = 1500;
+//   space = 2000;
+// }
 
 //GENERATING RANDOM NUMBER OF MOLES (up to 10)
 function pickRandomLi() {
