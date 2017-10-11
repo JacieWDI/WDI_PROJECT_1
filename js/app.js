@@ -15,7 +15,7 @@ let $timer = null;
 let $score = null;
 let $replay;
 let $message = null;
-// let $advanced;
+let $advanced;
 
 //FOR ADDING GAMETIME AND SPEED LEVELS LATER - change to let
 
@@ -96,7 +96,7 @@ function pickRandomLi() {
 }
 //STEP 2: GENERATING "MOLE" AT RANDOM LI
 function showMole(li) {
-console.log(interval)
+  console.log(interval);
   const mole = $(li).addClass('mole');
   $(li).one('click', killMole);
 
@@ -104,7 +104,7 @@ console.log(interval)
   setTimeout(function() {
     $(li).removeClass('mole');
     $(li).off('click');
-  }, 1000);
+  }, flash);
 }
 //TRY STARTING TIMEOUT AND INTERVAL VALUES AS VARIABLES FOR MORE DIFFICULT LEVELS
 //   setTimeout(function() {
@@ -139,7 +139,7 @@ function startTimer() {
 
 function incrementScore() {
   if(killMole)
-    score++;
+  score++;
   updateScorevalue();
   console.log('SCORE');
   // $message.html('HOME RUN!');
