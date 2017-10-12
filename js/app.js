@@ -7,13 +7,9 @@ let $timer = null;
 let $score = null;
 let $replay;
 let $message = null;
+let $currentLevel;
 
-//FOR ADDING GAMETIME AND SPEED LEVELS LATER - change to let
-
-// let flash = 2000;
-// let space = 2500;
-
-let count = 20;
+let count = 30;
 // let score = 0;
 
 function setup() {
@@ -23,6 +19,7 @@ function setup() {
   $score = $('.score');
   $replay = $('.replay');
   $message = $('.message');
+  $currentLevel = $('currentLevel');
   $('.go').on('click', startGame);
 }
 
@@ -34,10 +31,9 @@ function pickRandomLi() {
 
 //GENERATING "MOLE" AT RANDOM LI(S)
 function showMole(li) {
-  console.log(interval)
+  console.log(interval);
   const mole = $(li).addClass('mole');
   $(li).one('click', killMole);
-
 
   setTimeout(function() {
     $(li).removeClass('mole');
@@ -56,6 +52,7 @@ function killMole() {
 function startGame() {
   interval = setInterval(startTimer, space);
   playAgain();
+  // levelUp();
 }
 
 function startTimer() {
@@ -70,10 +67,13 @@ function startTimer() {
 }
 
 function incrementScore() {
-  if(killMole)
+  if(killMole){
     score++;
-  updateScorevalue();
-  console.log('SCORE');
+    updateScorevalue();
+    console.log('SCORE');
+
+    levelUp();
+  }
 }
 
 function updateScorevalue() {
@@ -81,31 +81,38 @@ function updateScorevalue() {
 }
 
 //LEVELLING UP CODE
-//Create object for LEVELS
 const levels = {1: 5, 2: 10, 3: 15, 4: 20, 5: 25
 };
 
+//MOVE THESE TO TOP ONCE WORKING
 let currentLevel = 1;
 let score = 0;
-let flash = 3000;
+let flash = 2500;
+let space = 3000;
 
 function levelUp() {
-  if(score === levels[currentLevel])
-  current level++;
-  clear interval();
-  flash = flash-500;
-  start interval();
-}
+  if(score === levels[currentLevel]) {
+    currentLevel++;
+    console.log('LEVEL UP!');
+    clearInterval(interval);
+    flash = flash-500;
+    space = space-500;
+    interval = setInterval(startTimer, space);
 
+    $currentLevel.html(`${currentLevel}`);//FIX!!!!!!!!!!
+  }
+}
 
 //PLAY AGAIN - RESET
 function playAgain() {
   $replay.on('click', playAgain);
   console.log('REPLAY');
   score = 0;
-  count = 20;
+  count = 30;
+  currentLevel = 1;
 
   $score.html(score);
   $timer.html(count);
+  $currentLevel.html(`${currentLevel}`);//FIX!!!!!!!!!!!!!!!!
   $message.html('PLAY BALL!');
 }
