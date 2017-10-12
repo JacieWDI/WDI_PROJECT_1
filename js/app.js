@@ -1,29 +1,20 @@
-//EXPANSION TO BASIC GAME: multiple moles appearing
-//Additional 2: faster level(s)
-
-//Wed PM - WORK OUT HOW TO DIVIDE LEVELS AND TIMING
-//Wednesday EVE - Start visual & styling - graphics and sounds
-//Thursday - Complete Visual & styling
-
 $(setup);
 
 //VARIABLES
 let $li = null;
-let $go;
 let interval = null;
 let $timer = null;
 let $score = null;
 let $replay;
 let $message = null;
-let $advanced;
 
 //FOR ADDING GAMETIME AND SPEED LEVELS LATER - change to let
 
-let flash = 2000;
-let space = 2500;
+// let flash = 2000;
+// let space = 2500;
 
 let count = 20;
-let score = 0;
+// let score = 0;
 
 function setup() {
   $li = $('li');
@@ -33,85 +24,26 @@ function setup() {
   $replay = $('.replay');
   $message = $('.message');
   $('.go').on('click', startGame);
-
-  //GAMETIME AND SPEED LEVELS
-  const $advanced = $('.advanced');
-
-  //ADVANCED LEVEL
-  $advanced.on('click', () => {
-    if (flash !== 1500) {
-      advanced();
-    } else {
-      normal();
-    }
-  });
 }
 
-
-//INCREASED SPEED LEVEL
-//1. Faster level - change counter and loop counter
-
-
-
-function normal() {
-  flash = 2000;
-  space = 2500;
-}
-
-function advanced() {
-  flash = 1500;
-  space = 2000;
-}
-
-//GENERATING RANDOM NUMBER OF MOLES (up to 10)
+//PICKING ONE RANDOM MOLE
 function pickRandomLi() {
-  //PICKING ONE RANDOM MOLE
-  // const li = $li[Math.floor(Math.random()*$li.length)];
-  // console.log(li);
-  // showMole(li);
-  //FROM SAME SIZE ARRAY AS LIS
-  // let newCounter = 0;
-  // const possibleIndex = [];
-  // for (var i = 0; i < 25; i++) {
-  //   possibleIndex.push(i);
-  //   newCounter++;
-  // }
-  //
-  // const randomNoMoles = Math.floor(Math.random()*10+1);
-  //
-  // for (var j= 0; j < randomNoMoles; j++) {
-  //   const chosenIndex = Math.floor(Math.random()*possibleIndex.length);
-  //   const li = $li[chosenIndex];
-  //   possibleIndex.splice(chosenIndex,1);
-  //
-  //   showMole(li);
-  // }
-
-  for (var i = 0; i < 25; i++) {
-    const li = $li[Math.floor(Math.random()*$li.length)];
-    setTimeout(() => {
-      showMole(li);
-    }, 1000*i);
-  }
+  const li = $li[Math.floor(Math.random()*$li.length)];
+  showMole(li);
 }
-//STEP 2: GENERATING "MOLE" AT RANDOM LI
+
+//GENERATING "MOLE" AT RANDOM LI(S)
 function showMole(li) {
-  console.log(interval);
+  console.log(interval)
   const mole = $(li).addClass('mole');
   $(li).one('click', killMole);
 
-  //BASIC GAME LOGIC
+
   setTimeout(function() {
     $(li).removeClass('mole');
     $(li).off('click');
   }, flash);
 }
-//TRY STARTING TIMEOUT AND INTERVAL VALUES AS VARIABLES FOR MORE DIFFICULT LEVELS
-//   setTimeout(function() {
-//     $(li).removeClass('mole');
-//     $(li).off('click');
-//   }, flash);
-// }
 
 //KILL "MOLE" - REMOVING CLASS AND INCREMENT SCORE
 function killMole() {
@@ -139,15 +71,32 @@ function startTimer() {
 
 function incrementScore() {
   if(killMole)
-  score++;
+    score++;
   updateScorevalue();
   console.log('SCORE');
-  // $message.html('HOME RUN!');
 }
 
 function updateScorevalue() {
   if (score>=0) $score.html(score);
 }
+
+//LEVELLING UP CODE
+//Create object for LEVELS
+const levels = {1: 5, 2: 10, 3: 15, 4: 20, 5: 25
+};
+
+let currentLevel = 1;
+let score = 0;
+let flash = 3000;
+
+function levelUp() {
+  if(score === levels[currentLevel])
+  current level++;
+  clear interval();
+  flash = flash-500;
+  start interval();
+}
+
 
 //PLAY AGAIN - RESET
 function playAgain() {
@@ -160,9 +109,3 @@ function playAgain() {
   $timer.html(count);
   $message.html('PLAY BALL!');
 }
-
-
-
-//STYLING - VISUAL AND AUDIO - THURS
-//Grey / White / Red / Black only --> find a standard color mix palette for all work
-//Sports based - softball
