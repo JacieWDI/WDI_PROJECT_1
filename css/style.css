@@ -7,32 +7,44 @@ body {
 }
 
 aside {
+  width: 300px;
+  /*height: 150px;*/
+  display:inline;
   float: left;
-  width: 150px;
+  padding-top: 80px;
+  padding-left: 40px;
 }
+
+/*.red {
+  float: right;
+}*/
 
 header {
   height: 150px;
   background-color: #222;
   text-align: center;
   color: #CE1C1C;
-  font-size: 50px;
+  font-size: 60px;
   border-color: #695D5D;
   border-width: medium;
   font-family: 'Nosifer', cursive;
-  padding-top: 35px;
+  padding-top: 40px;
 }
 
 h2 {
   color: #CE1C1C;
   font-size: 30px;
   width: 100%;
+  /*font-family: 'Indie Flower', cursive;*/
+  font-family: 'Nothing You Could Do', cursive;
+  margin-bottom: 20px;
 }
 ul {
   margin: 10px auto;
   width: 600px;
   height: 600px;
   background: #444;
+  padding-top: 40px;
   cursor: url('images/axe.jpg'), crosshair;
 }
 
@@ -46,6 +58,7 @@ li {
   text-align: center;
   float: left;
   font-size: 130px;
+  border-radius: 10px;
 }
 
 .mole {
@@ -64,23 +77,65 @@ button {
   color: #CE1C1C;
   background-color: #222;
   cursor: pointer;
-  height: 30px;
+  width: 100%;
+  text-align:center;
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 25px;
+  margin-top: 40px;
+  margin-left: 20px;
+  border-radius:5px;
+  box-shadow:3px;
+}
+
+go {
+  height: 25px;
+}
+
+replay {
+  height: 60px;
+  margin-top: 120px;
+}
+
+.timer {
+  height: 50px;
+  font-size: 45px;
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  margin: 20px;
 }
 
 .scoreboard {
   height: 40px;
+  font-size: 45px;
+  font-family: 'Nothing You Could Do', cursive;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 70px;
+  text-align: center;
 
 }
 .message {
-  height: 40px;
+  height: 80px;
+  font-family: 'Nothing You Could Do', cursive;
+  margin-left: 20px;
+  font-size: 60px;
+  text-align:center;
 }
 
 footer {
-  height: 10px;
+  height: 30px;
   background-color: #222;
-  /*clear: both;*/
+  clear: both;
   bottom: 0;
   position: absolute;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+.push {
+  height: 50px;
 }
 /*RESPONSIVE DESIGN IF TIME*/
 /*@media only screen and (max-width: 960px) {
