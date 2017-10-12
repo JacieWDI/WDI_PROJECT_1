@@ -3,64 +3,97 @@
 }
 
 body {
-  background: #F2F1F1;
+  background: #444;
+}
+
+aside {
+  float: left;
+  width: 150px;
 }
 
 header {
-  height: 100px;
-  background-color: white;
+  height: 150px;
+  background-color: #222;
   text-align: center;
-  color: #332D2D;
-  font-size: 80px;
+  color: #CE1C1C;
+  font-size: 50px;
   border-color: #695D5D;
   border-width: medium;
+  font-family: 'Nosifer', cursive;
+  padding-top: 35px;
 }
 
 h2 {
-  color: #E90505;
+  color: #CE1C1C;
+  font-size: 30px;
+  width: 100%;
 }
 ul {
   margin: 10px auto;
-  width: 500px;
-  height: 500px;
-  background: #787171;
-  cursor: url('../images/testbat2.png'), crosshair;
+  width: 600px;
+  height: 600px;
+  background: #444;
+  cursor: url('images/axe.jpg'), crosshair;
 }
 
 li {
-  width: 96px;
+  width: 116px;
   margin: 2px;
-  height: 96px;
-  line-height: 96px;
+  height: 116px;
+  line-height: 116px;
   background: #F2F1F1;
   color: #695D5D;
   text-align: center;
   float: left;
-  font-size: 80px;
+  font-size: 130px;
 }
 
 .mole {
-  /*background-color: #E90505;*/
-  background-image:url('../images/ball2.png');
-  background-repeat: none;
-  background-size: contain;
+  background-image:url('../images/pennywise2.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-
+/*.grid {
+  cursor:url(https://postimg.org/image/6z72fvx43/), auto;
+}*/
 
 button {
   margin: 0 auto;
-  color: #E90505;
-  background-color: #F2F1F1;
+  color: #CE1C1C;
+  background-color: #222;
   cursor: pointer;
+  height: 30px;
 }
 
-/*.go {
-  cursor: pointer;
-}*/
+.scoreboard {
+  height: 40px;
+
+}
+.message {
+  height: 40px;
+}
 
 footer {
-  height: 50px;
-  background-color: #695D5D;
-  clear: both;
+  height: 10px;
+  background-color: #222;
+  /*clear: both;*/
+  bottom: 0;
+  position: absolute;
 }
+/*RESPONSIVE DESIGN IF TIME*/
+/*@media only screen and (max-width: 960px) {
+  main .column {
+    width: 50%;
+  }
+  main .column:last-child {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px){
+  main .column {
+    width: 100%;
+  }
+}*/

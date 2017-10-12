@@ -99,5 +99,5 @@ function playAgain() {
   $score.html(score);
   $timer.html(count);
   $currentLevel.html(currentLevel);
-  $message.html('PLAY BALL!');
+  $message.html('Attack IT!');
 }
