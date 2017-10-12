@@ -52,7 +52,6 @@ function killMole() {
 function startGame() {
   interval = setInterval(startTimer, space);
   playAgain();
-  // levelUp();
 }
 
 function startTimer() {
@@ -99,7 +98,7 @@ function levelUp() {
     space = space-500;
     interval = setInterval(startTimer, space);
 
-    $currentLevel.html(`${currentLevel}`);//FIX!!!!!!!!!!
+    $currentLevel.html(currentLevel);//FIX FIX FIX
   }
 }
 
@@ -113,6 +112,6 @@ function playAgain() {
 
   $score.html(score);
   $timer.html(count);
-  $currentLevel.html(`${currentLevel}`);//FIX!!!!!!!!!!!!!!!!
+  $currentLevel.html(currentLevel); //FIX FIX FIX
   $message.html('PLAY BALL!');
 }
