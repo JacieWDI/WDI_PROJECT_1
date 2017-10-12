@@ -19,7 +19,7 @@ function setup() {
   $score = $('.score');
   $replay = $('.replay');
   $message = $('.message');
-  $currentLevel = $('currentLevel');
+  $currentLevel = $('.currentLevel');
   $('.go').on('click', startGame);
 }
 
@@ -98,7 +98,7 @@ function levelUp() {
     space = space-500;
     interval = setInterval(startTimer, space);
 
-    $currentLevel.html(currentLevel);//FIX FIX FIX
+    $currentLevel.html(currentLevel);
   }
 }
 
@@ -112,6 +112,6 @@ function playAgain() {
 
   $score.html(score);
   $timer.html(count);
-  $currentLevel.html(currentLevel); //FIX FIX FIX
+  $currentLevel.html(currentLevel);
   $message.html('PLAY BALL!');
 }
