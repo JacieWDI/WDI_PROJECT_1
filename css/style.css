@@ -8,17 +8,11 @@ body {
 
 aside {
   width: 300px;
-  /*height: 150px;*/
   display:inline;
   float: left;
   padding-top: 80px;
   padding-left: 40px;
 }
-
-/*.penny {
-  float:right;
-  display:inline;
-}*/
 
 header {
   height: 150px;
@@ -38,7 +32,6 @@ h2 {
   color: #CE1C1C;
   font-size: 30px;
   width: 100%;
-  /*font-family: 'Indie Flower', cursive;*/
   font-family: 'Nothing You Could Do', cursive;
   margin-bottom: 20px;
 }
@@ -140,16 +133,9 @@ footer {
   bottom: 0;
   position: absolute;
   width: 100%;
-  /*margin-top:5px;*/
   padding-top:10px;
 
 }
-
-/*footer.img {*/
-  /*height: 20px;*/
-  /*width: 100px;*/
-  /*padding-top:30px;
-}*/
 
 .wrapper {
   min-height: 100%;
