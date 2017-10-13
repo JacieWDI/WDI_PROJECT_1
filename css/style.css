@@ -31,6 +31,7 @@ header {
   font-family: 'Nosifer', cursive;
   padding-top: 40px;
   width: 100%;
+  text-transform:uppercase;
 }
 
 h2 {
@@ -129,7 +130,7 @@ article {
   display: inline;
   height: 100%;
   width: 100px;
-  margin-right: 300px;
+  margin-right: 302px;
 }
 
 footer {
@@ -144,11 +145,11 @@ footer {
 
 }
 
-footer.img {
+/*footer.img {*/
   /*height: 20px;*/
   /*width: 100px;*/
-  padding-top:30px;
-}
+  /*padding-top:30px;
+}*/
 
 .wrapper {
   min-height: 100%;
