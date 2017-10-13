@@ -24,6 +24,7 @@ function setup() {
   $message = $('.message');
   $currentLevel = $('.currentLevel');
   $('.go').on('click', startGame);
+  $audio.play();
 }
 
 function pickRandomLi() {
