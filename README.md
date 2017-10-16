@@ -21,10 +21,14 @@ Initial planning involved time scales expected to cover;
 - final styling
 
 ## Coding Highlights
-
-- removing click events from the DOM and simultaneously timing out click events 
 - at this stage, writing code in one method and then restructuring in alternative methods to incorporate and dry up flow of the code was useful
-- console.log and inspector tools to check the broken down steps of the code
+- generating random li and adding click event for set timeout
+![](screenshots/Figure 1. Interface with DOM.png)
+Figure 1: Interface with DOM
+
+- removing click events from the DOM and simultaneously timing out click events
+
+
 
 ## Challenges
 
@@ -36,6 +40,10 @@ Initial planning involved time scales expected to cover;
 ## Improvements
 
 - due to time constraints, CSS requires a revisit to ensure cleaner presentation for ease of redoing layout if required
+
+![](screenshots/Figure 2. Game Page.png)
+Figure 2: Image during Play Mode
+
 - add animation and possibly work on own graphics in a design package
 - resolve cursor change issue and include audio attached to this event
 
@@ -43,4 +51,3 @@ Initial planning involved time scales expected to cover;
 
 - Pennywise the clown image from "Pennywise IT" - pen by Beatrize Agustin
 - IT - Music from the Trailer - 2017 - you tube posted by Emotional Beats
-
