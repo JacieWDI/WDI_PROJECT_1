@@ -23,7 +23,7 @@ Initial planning involved time scales expected to cover;
 ## Coding Highlights
 - at this stage, writing code in one method and then restructuring in alternative methods to incorporate and dry up flow of the code was useful
 - generating random li and adding click event for set timeout
-![](screenshots/Figure 1. Interface with DOM.png)
+![](screenshots/Figure1.InterfacewithDOM.png)
 Figure 1: Interface with DOM
 
 - removing click events from the DOM and simultaneously timing out click events
@@ -41,7 +41,7 @@ Figure 1: Interface with DOM
 
 - due to time constraints, CSS requires a revisit to ensure cleaner presentation for ease of redoing layout if required
 
-![](screenshots/Figure 2. Game Page.png)
+![](screenshots/Figure2.GamePage.png)
 Figure 2: Image during Play Mode
 
 - add animation and possibly work on own graphics in a design package
