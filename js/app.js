@@ -101,5 +101,5 @@ function playAgain() {
   $score.html(score);
   $timer.html(count);
   $currentLevel.html(currentLevel);
-  $message.html('Attack IT!');++
+  $message.html('Attack IT!');
 }
